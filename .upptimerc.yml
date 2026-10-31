@@ -1,7 +1,12 @@
-# État du service Place de la mairie (E29-02) : surveillance extérieure, toutes les 5 minutes, et page de statut
+# État du service Place de la mairie (E29-02) : surveillance extérieure, au plus une fois par heure, et page de statut
 # publique sur status.place-de-la-mairie.fr. Une commune s'ajoute ici à sa mise en ligne.
 owner: dharmachose
 repo: statut
+
+# Une fois par heure, à la minute 0 comme les tâches du site : chaque passage réveille la base et le conteneur, facturés
+# à l'éveil. À ne pas retirer : Upptime réécrit .github/workflows d'après ce réglage, et son défaut est de 5 minutes.
+workflowSchedule:
+  uptime: "0 * * * *"
 
 sites:
   - name: Service (serveur et base de données)
@@ -17,7 +22,7 @@ status-website:
   cname: status.place-de-la-mairie.fr
   name: État du service · Place de la mairie
   introTitle: "**État du service** Place de la mairie"
-  introMessage: Disponibilité des sites des communes, vérifiée toutes les cinq minutes depuis l’extérieur de l’hébergeur. Les incidents et leur résolution s’affichent ci-dessous.
+  introMessage: Disponibilité des sites des communes, vérifiée au plus une fois par heure depuis l’extérieur de l’hébergeur. Les incidents et leur résolution s’affichent ci-dessous.
   navbar:
     - title: État du service
       href: /
