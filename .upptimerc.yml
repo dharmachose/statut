@@ -20,6 +20,7 @@ assignees:
 
 status-website:
   cname: status.place-de-la-mairie.fr
+  theme: light
   name: État du service · Place de la mairie
   introTitle: "**État du service** Place de la mairie"
   introMessage: Disponibilité des sites des communes, vérifiée au plus une fois par heure depuis l’extérieur de l’hébergeur. Les incidents et leur résolution s’affichent ci-dessous.
